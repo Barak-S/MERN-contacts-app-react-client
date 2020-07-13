@@ -1,0 +1,95 @@
+$hoverSubmit: #57A773;
+$hoverUpdate: #6A8EAE;
+$hoverDelete: #B34248;
+$hoverText: lightcoral;
+
+@mixin flexCenter($direction, $bgColor) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background-color: $bgColor;
+}
+
+ul{
+    list-style: none;
+    width: 30%;
+    margin: auto;
+}
+
+h3::selection{
+    background: $hoverText;
+}
+
+h4.ListItem{
+    padding:3px;
+    margin: 5px;
+}
+
+div.newContact{
+    @include flexCenter(column, $hoverSubmit);
+    display: flex;
+    h3{
+        color: $hoverDelete;
+    }
+}
+
+div.allContacts{
+    @include flexCenter(column ,$hoverUpdate);
+    min-height: 100vh;
+}
+
+.contactDiv{
+    font-size: 1.3rem;
+    line-height: 2rem;
+    border: 3px dotted #333;
+    margin-bottom: 5px;
+    h4{
+        color: $hoverDelete;
+    }
+}
+
+.ListItem::selection{
+    background: $hoverText;
+}
+
+h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,h6::selection,p::selection, button::selection, label::selection, input::selection{
+    background: $hoverText;
+}
+
+form{
+    width: 50%;
+    position: relative;
+    input{
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+}
+
+.submit{
+    height: 25px;
+    margin:5px;
+    background-color: #777;
+    &:hover{
+        background-color: $hoverSubmit;
+        cursor: pointer;
+    }
+}
+
+
+.delete{
+    margin-left: 7px;
+    &:hover{
+        background-color: $hoverDelete;
+        cursor: pointer;
+    }
+}
+
+
+.update{
+    margin-left: 7px;
+    &:hover{
+        background-color: $hoverUpdate;
+        cursor: pointer;
+    }
+}
+

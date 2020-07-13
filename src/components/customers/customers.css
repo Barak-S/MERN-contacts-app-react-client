@@ -1,0 +1,121 @@
+ul {
+  list-style: none;
+  width: 30%;
+  margin: auto;
+}
+
+h3::-moz-selection {
+  background: lightcoral;
+}
+
+h3::selection {
+  background: lightcoral;
+}
+
+h4.ListItem {
+  padding: 3px;
+  margin: 5px;
+}
+
+div.newContact {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #57A773;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.newContact h3 {
+  color: #B34248;
+}
+
+div.allContacts {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #6A8EAE;
+  min-height: 100vh;
+}
+
+.contactDiv {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  border: 3px dotted #333;
+  margin-bottom: 5px;
+}
+
+.contactDiv h4 {
+  color: #B34248;
+}
+
+.ListItem::-moz-selection {
+  background: lightcoral;
+}
+
+.ListItem::selection {
+  background: lightcoral;
+}
+
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection, p::-moz-selection, button::-moz-selection, label::-moz-selection, input::-moz-selection {
+  background: lightcoral;
+}
+
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, button::selection, label::selection, input::selection {
+  background: lightcoral;
+}
+
+form {
+  width: 50%;
+  position: relative;
+}
+
+form input {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.submit {
+  height: 25px;
+  margin: 5px;
+  background-color: #777;
+}
+
+.submit:hover {
+  background-color: #57A773;
+  cursor: pointer;
+}
+
+.delete {
+  margin-left: 7px;
+}
+
+.delete:hover {
+  background-color: #B34248;
+  cursor: pointer;
+}
+
+.update {
+  margin-left: 7px;
+}
+
+.update:hover {
+  background-color: #6A8EAE;
+  cursor: pointer;
+}
+/*# sourceMappingURL=customers.css.map */
