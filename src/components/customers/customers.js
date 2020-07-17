@@ -8,7 +8,7 @@ export default class Customers extends React.Component {
     render(){
         return (
           <div className="allContacts">
-              <h2>Contacts</h2>
+              <div className="contactsContainer">
                 <ul>
                     {this.props.contacts.map(c=>{
                         return(
@@ -16,6 +16,7 @@ export default class Customers extends React.Component {
                         )
                     })}
                 </ul>
+              </div>
           </div>
         );
 

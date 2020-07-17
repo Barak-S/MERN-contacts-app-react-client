@@ -53,6 +53,10 @@ div.allContacts {
   min-height: 100vh;
 }
 
+.contactsContainer {
+  padding-top: 1rem;
+}
+
 .contactDiv {
   font-size: 1.3rem;
   line-height: 2rem;
@@ -97,7 +101,7 @@ form input {
 }
 
 .submit:hover {
-  background-color: #57A773;
+  background-color: #FFC857;
   cursor: pointer;
 }
 

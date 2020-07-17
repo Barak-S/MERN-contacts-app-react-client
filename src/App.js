@@ -16,7 +16,6 @@ class App extends React.Component {
 
   addCustomers=(e, paramName, paramNumber, paramAddress)=>{
     e.preventDefault()
-    // console.log("here is my new contact: ", paramName, paramNumber)
     let newContact = {name: paramName, 
                       number: paramNumber,
                       address: paramAddress}
@@ -55,7 +54,7 @@ class App extends React.Component {
             _id: id
         })
     })
-    this.findContactInState(paramName, paramNumber, id)
+    this.deleteContactInState(id)
 }
 
   clickUpdateButton=(name, number, address, id)=>{
@@ -65,20 +64,40 @@ class App extends React.Component {
     })
   }
 
-  updateContact=(e, paramName, paramNumber, paramId)=>{
+  updateContact=(e, paramName, paramNumber, paramAddress, paramId)=>{
     e.preventDefault()
-      fetch('/contacts',{
+      fetch('http://localhost:5000/contacts',{
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
             name: paramName, 
-            number: paramNumber,
+            number: parseInt(paramNumber),
+            address: paramAddress,
             _id: paramId
         })
       })
+      .then(resp=>resp.json())
+      .then(updatedContact=>{
+
+        let findConatctInState = this.state.contacts.filter(c=> c._id === updatedContact._id)[0]
+        let indexOfContact= this.state.contacts.indexOf(findConatctInState)
+        
+        let conatctsArray = [...this.state.contacts]
+        let myContact = {...conatctsArray[indexOfContact]}
+        myContact.name = updatedContact.name
+        myContact.number = updatedContact.number
+        myContact.address = updatedContact.address
+
+        conatctsArray[indexOfContact] = myContact
+
+        this.setState({
+          contacts: conatctsArray
+        })
+
+      })
   }
 
-  findContactInState(paramName, paramNumber, id){
+  deleteContactInState(id){
     let myContacts = [...this.state.contacts].filter(c=>c._id !== id)
     this.setState({
       contacts: myContacts
